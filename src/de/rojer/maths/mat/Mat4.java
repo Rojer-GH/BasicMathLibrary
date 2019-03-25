@@ -36,7 +36,7 @@ public class Mat4 {
 	
 	/**
 	 * Creates a matrix, with its values being 0, while its diagonal can be specified
-	 * @param diagonal : the value for the numbers of the diagonal
+	 * @param diagonal the value for the numbers of the diagonal
 	 */
 	public Mat4(float diagonal) {
 		elements = new float[16];
@@ -49,11 +49,22 @@ public class Mat4 {
 		elements[3 + 3 * 4] = diagonal;
 	}
 	
+	//"Destructors"
+	
+	/**
+	 * Destroys this object
+	 * @param matrix this object
+	 */
+	public void destroy(Mat4 matrix) {
+		this.elements = null;
+		matrix = null;
+	}
+	
 	//Arithmetic
 	
 	/**
 	 * Multiplies this matrix with another one
-	 * @param other : the matrix to multiply with this matrix
+	 * @param other the matrix to multiply with this matrix
 	 * @return this matrix for multiple operations "in one line"
 	 */
 	public Mat4 multiply(Mat4 other) {
@@ -77,7 +88,7 @@ public class Mat4 {
 	
 	/**
 	 * Multiplies a copy of this matrix with another one
-	 * @param other : the matrix to multiply with the copy
+	 * @param other the matrix to multiply with the copy
 	 * @return the multiplied copy
 	 */
 	public Mat4 cmultiply(Mat4 other) {
@@ -92,7 +103,7 @@ public class Mat4 {
 
 	/**
 	 * Multiplies this matrix with a Vec3
-	 * @param other : the vector to multiply with this matrix
+	 * @param vector the vector to multiply with this matrix
 	 * @return this matrix for multiple operations "in one line"
 	 */
 	public Vec3 multiply(Vec3 vector) {
@@ -110,7 +121,7 @@ public class Mat4 {
 	
 	/**
 	 * Multiplies a copy of this matrix with a Vec3
-	 * @param other : the vector to multiply with the copy
+	 * @param other the vector to multiply with the copy
 	 * @return the multiplied copy
 	 */
 	public Vec3 cmultiply(Vec3 other) {
@@ -125,7 +136,7 @@ public class Mat4 {
 	
 	/**
 	 * Multiplies this matrix with a Vec4
-	 * @param other : the vector to multiply with this matrix
+	 * @param vector the vector to multiply with this matrix
 	 * @return this matrix for multiple operations "in one line"
 	 */
 	public Vec4 multiply(Vec4 vector) {
@@ -144,7 +155,7 @@ public class Mat4 {
 	
 	/**
 	 * Multiplies a copy of this matrix with a Vec4
-	 * @param other : the vector to multiply with the copy
+	 * @param other the vector to multiply with the copy
 	 * @return the multiplied copy
 	 */
 	public Vec4 cmultiply(Vec4 other) {
@@ -168,12 +179,12 @@ public class Mat4 {
 	
 	/**
 	 * Returns an orthographic matrix
-	 * @param left : the left-side of the screen
-	 * @param right : the right-side of the screen
-	 * @param bottom : the bottom-side of the screen
-	 * @param top : the top-side of the screen
-	 * @param near : the near-side of the screen
-	 * @param far : the far-side of the screen
+	 * @param left the left-side of the screen
+	 * @param right the right-side of the screen
+	 * @param bottom the bottom-side of the screen
+	 * @param top the top-side of the screen
+	 * @param near the near-side of the screen
+	 * @param far the far-side of the screen
 	 * @return the matrix
 	 */
 	public static Mat4 Orthographic(float left, float right, float bottom, float top, float near, float far) {
@@ -192,10 +203,10 @@ public class Mat4 {
 	
 	/**
 	 * Returns a perspective matrix
-	 * @param fov : the force of view
-	 * @param aspectRatio : the aspect-ratio of the screen
-	 * @param near : the near-side of the screen
-	 * @param far : the far-side of the screen
+	 * @param fov the force of view
+	 * @param aspectRatio the aspect-ratio of the screen
+	 * @param near the near-side of the screen
+	 * @param far the far-side of the screen
 	 * @return the matrix
 	 */
 	public static Mat4 Perspective(float fov, float aspectRatio, float near, float far) {
@@ -217,7 +228,7 @@ public class Mat4 {
 	
 	/**
 	 * Returns a translation matrix, with which you can "move" objects on the screen
-	 * @param translation : a Vec3 containing the translation on the x-, y- and z-axis
+	 * @param translation a Vec3 containing the translation on the x-, y- and z-axis
 	 * @return the matrix
 	 */
 	public static Mat4 Translation(Vec3 translation) {
@@ -232,8 +243,9 @@ public class Mat4 {
 	
 	/**
 	 * Returns a rotation matrix
-	 * @param angle : the angle in degrees
-	 * @param axis : the axis
+	 * @param angleX the angle in x-direction
+	 * @param angleY the angle in y-direction
+	 * @param angleZ the angle in z-direction
 	 * @return the matrix
 	 */
 	public static Mat4 Rotation(float angleX, float angleY, float angleZ) {
@@ -273,7 +285,7 @@ public class Mat4 {
 	
 	/**
 	 * Returns a scale matrix
-	 * @param scale : the scaling value
+	 * @param scale the scaling value
 	 * @return the matrix
 	 */
 	public static Mat4 Scale(Vec3 scale) {

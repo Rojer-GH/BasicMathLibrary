@@ -10,7 +10,7 @@ public class Vec3 {
 	//Attributes
 
 	/**
-	 * the components of the vector
+	 * The components of the vector
 	 */
 	public float x, y, z;
 	
@@ -27,9 +27,9 @@ public class Vec3 {
 	
 	/**
 	 * Creates a vector with the specified values
-	 * @param x : the value of the x-component
-	 * @param y : the value of the y-component
-	 * @param z : the value of the z-component
+	 * @param x the value of the x-component
+	 * @param y the value of the y-component
+	 * @param z the value of the z-component
 	 */
 	public Vec3(float x, float y, float z) {
 		this.x = x;
@@ -37,11 +37,20 @@ public class Vec3 {
 		this.z = z;
 	}
 	
+	//"Destructors"
+	
+	public void destroy(Vec3 vector) {
+		this.x = 0.0f;
+		this.y = 0.0f;
+		this.z = 0.0f;
+		vector = null;
+	}
+	
 	//Arithmetic
 	
 	/**
 	 * Adds a vector to this vector
-	 * @param other : the vector to add to this vector
+	 * @param other the vector to add to this vector
 	 * @return this vector for multiple operations "in one line"
 	 */
 	public Vec3 add(Vec3 other) {
@@ -53,7 +62,7 @@ public class Vec3 {
 	
 	/**
 	 * Creates a copy of this instance, then adds a vector to the copy
-	 * @param other : the vector to add to the copy
+	 * @param other the vector to add to the copy
 	 * @return the copy of this vector
 	 */
 	public Vec3 cadd(Vec3 other) {
@@ -68,7 +77,7 @@ public class Vec3 {
 	
 	/**
 	 * Subtracts a vector from this vector
-	 * @param other : the vector to subtract to this vector
+	 * @param other the vector to subtract to this vector
 	 * @return this vector for multiple operations "in one line"
 	 */
 	public Vec3 subtract(Vec3 other) {
@@ -81,7 +90,7 @@ public class Vec3 {
 
 	/**
 	 * Creates a copy of this instance, then subtracts a vector from the copy
-	 * @param other : the vector to subtract from the copy
+	 * @param other the vector to subtract from the copy
 	 * @return the copy of this vector
 	 */
 	public Vec3 csubtract(Vec3 other) {
@@ -96,7 +105,7 @@ public class Vec3 {
 	
 	/**
 	 * Multiplies this vector with another one
-	 * @param other : the vector to multiply with this vector
+	 * @param other the vector to multiply with this vector
 	 * @return this vector for multiple operations "in one line"
 	 */
 	public Vec3 multiply(Vec3 other) {
@@ -108,7 +117,7 @@ public class Vec3 {
 	
 	/**
 	 * Creates a copy of this instance, then multiplies a vector with the copy
-	 * @param other : the vector to multiply the copy with
+	 * @param other the vector to multiply the copy with
 	 * @return the copy of this vector
 	 */
 	public Vec3 cmultiply(Vec3 other) {
@@ -123,7 +132,7 @@ public class Vec3 {
 	
 	/**
 	 * Divides this vector by another vector
-	 * @param other : the vector to divide this vector with
+	 * @param other the vector to divide this vector with
 	 * @return this vector for multiple operations "in one line"
 	 */
 	public Vec3 divide(Vec3 other) {
@@ -135,7 +144,7 @@ public class Vec3 {
 	
 	/**
 	 * Creates a copy of this instance, then divides by a vector
-	 * @param other : the vector to divide the copy with
+	 * @param other the vector to divide the copy with
 	 * @return the copy of this vector
 	 */
 	public Vec3 cdivide(Vec3 other) {

@@ -10,7 +10,7 @@ public class Vec2 {
 	//Attributes
 	
 	/**
-	 * the components of the vector
+	 * The components of the vector
 	 */
 	public float x, y;
 	
@@ -26,19 +26,31 @@ public class Vec2 {
 	
 	/**
 	 * Creates a vector with the specified values
-	 * @param x : value of the x-component
-	 * @param y : value of the y-component
+	 * @param x value of the x-component
+	 * @param y value of the y-component
 	 */
 	public Vec2(float x, float y) {
 		this.x = x;
 		this.y = y;
 	}
 	
+	//"Destructors"
+	
+	/**
+	 * Destroys this object
+	 * @param vector this object
+	 */
+	public void destroy(Vec2 vector) {
+		this.x = 0.0f;
+		this.y = 0.0f;
+		vector = null;
+	}
+	
 	//Arithmetic
 	
 	/**
 	 * Adds a vector to this vector
-	 * @param other : the vector to add to this vector
+	 * @param other the vector to add to this vector
 	 * @return this vector for multiple operations "in one line"
 	 */
 	public Vec2 add(Vec2 other) {
@@ -49,7 +61,7 @@ public class Vec2 {
 	
 	/**
 	 * Creates a copy of this instance, then adds a vector to the copy
-	 * @param other : the vector to add to the copy
+	 * @param other the vector to add to the copy
 	 * @return the copy of this vector
 	 */
 	public Vec2 cadd(Vec2 other) {
@@ -64,7 +76,7 @@ public class Vec2 {
 	
 	/**
 	 * Subtracts a vector from this vector
-	 * @param other : the vector to subtract to this vector
+	 * @param other the vector to subtract to this vector
 	 * @return this vector for multiple operations "in one line"
 	 */
 	public Vec2 subtract(Vec2 other) {
@@ -75,7 +87,7 @@ public class Vec2 {
 	
 	/**
 	 * Creates a copy of this instance, then subtracts a vector from the copy
-	 * @param other : the vector to subtract from the copy
+	 * @param other the vector to subtract from the copy
 	 * @return the copy of this vector
 	 */
 	public Vec2 csubtract(Vec2 other) {
@@ -90,7 +102,7 @@ public class Vec2 {
 	
 	/**
 	 * Multiplies this vector with another one
-	 * @param other : the vector to multiply with this vector
+	 * @param other the vector to multiply with this vector
 	 * @return this vector for multiple operations "in one line"
 	 */
 	public Vec2 multiply(Vec2 other) {
@@ -101,7 +113,7 @@ public class Vec2 {
 	
 	/**
 	 * Creates a copy of this instance, then multiplies a vector with the copy
-	 * @param other : the vector to multiply the copy with
+	 * @param other the vector to multiply the copy with
 	 * @return the copy of this vector
 	 */
 	public Vec2 cmultiply(Vec2 other) {
@@ -116,7 +128,7 @@ public class Vec2 {
 	
 	/**
 	 * Divides this vector by another vector
-	 * @param other : the vector to divide this vector with
+	 * @param other the vector to divide this vector with
 	 * @return this vector for multiple operations "in one line"
 	 */
 	public Vec2 divide(Vec2 other) {
@@ -127,7 +139,7 @@ public class Vec2 {
 	
 	/**
 	 * Creates a copy of this instance, then divides by a vector
-	 * @param other : the vector to divide the copy with
+	 * @param other the vector to divide the copy with
 	 * @return the copy of this vector
 	 */
 	public Vec2 cdivide(Vec2 other) {

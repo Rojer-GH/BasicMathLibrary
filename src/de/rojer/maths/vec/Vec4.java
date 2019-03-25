@@ -10,7 +10,7 @@ public class Vec4 {
 	//Attributes
 	
 	/**
-	 * the components of the vector
+	 * The components of the vector
 	 */
 	public float x, y, z, w;
 	
@@ -28,10 +28,10 @@ public class Vec4 {
 	
 	/**
 	 * Creates a vector with the specified values
-	 * @param x : the value of the x-component
-	 * @param y : the value of the y-component
-	 * @param z : the value of the z-component
-	 * @param w : the value of the w-component
+	 * @param x the value of the x-component
+	 * @param y the value of the y-component
+	 * @param z the value of the z-component
+	 * @param w the value of the w-component
 	 */
 	public Vec4(float x, float y, float z, float w) {
 		this.x = x;
@@ -40,11 +40,21 @@ public class Vec4 {
 		this.w = w;
 	}
 	
+	//"Destructors"
+	
+	public void destroy(Vec4 vector) {
+		this.x = 0.0f;
+		this.y = 0.0f;
+		this.z = 0.0f;
+		this.w = 0.0f;
+		vector = null;
+	}
+	
 	//Arithmetic
 	
 	/**
 	 * Adds a vector to this vector
-	 * @param other : the vector to add to this vector
+	 * @param other the vector to add to this vector
 	 * @return this vector for multiple operations "in one line"
 	 */
 	public Vec4 add(Vec4 other) {
@@ -57,7 +67,7 @@ public class Vec4 {
 	
 	/**
 	 * Creates a copy of this instance, then adds a vector to the copy
-	 * @param other : the vector to add to the copy
+	 * @param other the vector to add to the copy
 	 * @return the copy of this vector
 	 */
 	public Vec4 cadd(Vec4 other) {
@@ -72,7 +82,7 @@ public class Vec4 {
 	
 	/**
 	 * Subtracts a vector from this vector
-	 * @param other : the vector to subtract to this vector
+	 * @param other the vector to subtract to this vector
 	 * @return this vector for multiple operations "in one line"
 	 */
 	public Vec4 subtract(Vec4 other) {
@@ -85,7 +95,7 @@ public class Vec4 {
 	
 	/**
 	 * Creates a copy of this instance, then subtracts a vector from the copy
-	 * @param other : the vector to subtract from the copy
+	 * @param other the vector to subtract from the copy
 	 * @return the copy of this vector
 	 */
 	public Vec4 csubtract(Vec4 other) {
@@ -100,7 +110,7 @@ public class Vec4 {
 	
 	/**
 	 * Multiplies this vector with another one
-	 * @param other : the vector to multiply with this vector
+	 * @param other the vector to multiply with this vector
 	 * @return this vector for multiple operations "in one line"
 	 */
 	public Vec4 multiply(Vec4 other) {
@@ -113,7 +123,7 @@ public class Vec4 {
 	
 	/**
 	 * Creates a copy of this instance, then multiplies a vector with the copy
-	 * @param other : the vector to multiply the copy with
+	 * @param other the vector to multiply the copy with
 	 * @return the copy of this vector
 	 */
 	public Vec4 cmultiply(Vec4 other) {
@@ -128,7 +138,7 @@ public class Vec4 {
 	
 	/**
 	 * Divides this vector by another vector
-	 * @param other : the vector to divide this vector with
+	 * @param other the vector to divide this vector with
 	 * @return this vector for multiple operations "in one line"
 	 */
 	public Vec4 divide(Vec4 other) {
@@ -141,7 +151,7 @@ public class Vec4 {
 	
 	/**
 	 * Creates a copy of this instance, then divides by a vector
-	 * @param other : the vector to divide the copy with
+	 * @param other the vector to divide the copy with
 	 * @return the copy of this vector
 	 */
 	public Vec4 cdivide(Vec4 other) {
