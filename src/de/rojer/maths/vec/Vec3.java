@@ -2,20 +2,21 @@ package de.rojer.maths.vec;
 
 /**
  * 3-dimensional Vector, components are floats
+ * 
  * @author Rojer
  * @version 23.03.2019
  */
 public class Vec3 {
 
-	//Attributes
+	// Attributes
 
 	/**
 	 * The components of the vector
 	 */
 	public float x, y, z;
-	
-	//Constructors
-	
+
+	// Constructors
+
 	/**
 	 * Default vector, components are 0
 	 */
@@ -24,9 +25,10 @@ public class Vec3 {
 		y = 0.0f;
 		z = 0.0f;
 	}
-	
+
 	/**
 	 * Creates a vector with the specified values
+	 * 
 	 * @param x the value of the x-component
 	 * @param y the value of the y-component
 	 * @param z the value of the z-component
@@ -36,20 +38,21 @@ public class Vec3 {
 		this.y = y;
 		this.z = z;
 	}
-	
-	//"Destructors"
-	
+
+	// "Destructors"
+
 	public void destroy(Vec3 vector) {
 		this.x = 0.0f;
 		this.y = 0.0f;
 		this.z = 0.0f;
 		vector = null;
 	}
-	
-	//Arithmetic
-	
+
+	// Arithmetic
+
 	/**
 	 * Adds a vector to this vector
+	 * 
 	 * @param other the vector to add to this vector
 	 * @return this vector for multiple operations "in one line"
 	 */
@@ -59,9 +62,10 @@ public class Vec3 {
 		z += other.z;
 		return this;
 	}
-	
+
 	/**
 	 * Creates a copy of this instance, then adds a vector to the copy
+	 * 
 	 * @param other the vector to add to the copy
 	 * @return the copy of this vector
 	 */
@@ -74,9 +78,10 @@ public class Vec3 {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Subtracts a vector from this vector
+	 * 
 	 * @param other the vector to subtract to this vector
 	 * @return this vector for multiple operations "in one line"
 	 */
@@ -86,10 +91,10 @@ public class Vec3 {
 		z -= other.z;
 		return this;
 	}
-	
 
 	/**
 	 * Creates a copy of this instance, then subtracts a vector from the copy
+	 * 
 	 * @param other the vector to subtract from the copy
 	 * @return the copy of this vector
 	 */
@@ -102,9 +107,10 @@ public class Vec3 {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Multiplies this vector with another one
+	 * 
 	 * @param other the vector to multiply with this vector
 	 * @return this vector for multiple operations "in one line"
 	 */
@@ -114,9 +120,10 @@ public class Vec3 {
 		z *= other.z;
 		return this;
 	}
-	
+
 	/**
 	 * Creates a copy of this instance, then multiplies a vector with the copy
+	 * 
 	 * @param other the vector to multiply the copy with
 	 * @return the copy of this vector
 	 */
@@ -129,9 +136,10 @@ public class Vec3 {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Divides this vector by another vector
+	 * 
 	 * @param other the vector to divide this vector with
 	 * @return this vector for multiple operations "in one line"
 	 */
@@ -141,9 +149,10 @@ public class Vec3 {
 		z /= other.z;
 		return this;
 	}
-	
+
 	/**
 	 * Creates a copy of this instance, then divides by a vector
+	 * 
 	 * @param other the vector to divide the copy with
 	 * @return the copy of this vector
 	 */
@@ -156,9 +165,9 @@ public class Vec3 {
 		}
 		return null;
 	}
-	
-	//Object-inherited methods
-	
+
+	// Object-inherited methods
+
 	/**
 	 * Returns the Sting-representation of this vector
 	 */
@@ -166,35 +175,35 @@ public class Vec3 {
 	public String toString() {
 		return "Vec3: " + x + ", " + y + ", " + z;
 	}
-	
+
 	/**
 	 * Checks if a Vec3, Vec3 or Vec4 is equal to this vector
 	 */
 	@Override
 	public boolean equals(Object obj) {
 		boolean result = false;
-		if(obj instanceof Vec2) {
-			Vec2 other = (Vec2)obj;
-			if(x == other.x && y == other.y) {
+		if (obj instanceof Vec2) {
+			Vec2 other = (Vec2) obj;
+			if (x == other.x && y == other.y) {
 				result = true;
 			}
-		}else if(obj instanceof Vec3) {
-			Vec3 other = (Vec3)obj;
-			if(x == other.x && y == other.y && z == other.z) {
+		} else if (obj instanceof Vec3) {
+			Vec3 other = (Vec3) obj;
+			if (x == other.x && y == other.y && z == other.z) {
 				result = true;
 			}
-		}else if(obj instanceof Vec4) {
-			Vec4 other = (Vec4)obj;
-			if(x == other.x && y == other.y && z == other.z) {
+		} else if (obj instanceof Vec4) {
+			Vec4 other = (Vec4) obj;
+			if (x == other.x && y == other.y && z == other.z) {
 				result = true;
 			}
 		}
 		return result;
 	}
-	
+
 	@Override
 	public Object clone() throws CloneNotSupportedException {
 		return new Vec3(x, y, z);
 	}
-	
+
 }
